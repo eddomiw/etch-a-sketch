@@ -1,0 +1,13 @@
+.value{
+    text-align: center;
+    width: 100px;
+    height:100px;
+}
+
+.row {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
