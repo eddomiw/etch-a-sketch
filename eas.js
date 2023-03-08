@@ -1,15 +1,39 @@
-const row = document.querySelector('.row');
-const column = document.querySelector('.column');
+const body = document.querySelector('.body');
 
-let boxes= [];
+let numberOfBoxes = prompt("How many boxes per row?", 16)
 
-for (i=0;i<16;i++){
-  boxes[i]= document.createElement('div');
-  boxes[i].classList.add('value')
-  boxes[i].textContent= 'hi';
-  boxes[i].addEventListener('mouseover', (e) => {
-    e.target.style.background = 'pink';
-  })
-  row.appendChild(boxes[i]);
+let emptyArray = [];
+
+// Create new div boxes classed as rows 
+for (i=0;i<numberOfBoxes;i++){
+  emptyArray[i] = document.createElement('div');
+  emptyArray[i].classList.add('row');
+  body.appendChild(emptyArray[i]);
 }
 
+
+// Create empty arrays for create box and color function
+let boxes = [];
+for (i=0;i<numberOfBoxes;i++) {
+  boxes[i]=[];
+};
+
+
+boxes.forEach((box) => {
+  for (i=0;i<numberOfBoxes;i++) {
+    createBoxAndColorChange(box);
+  };
+});
+
+
+
+
+function createBoxAndColorChange(rowName) {
+  rowName[i]= document.createElement('div');
+  rowName[i].classList.add('value')
+  rowName[i].textContent= 'hi';
+  rowName[i].addEventListener('mouseover', (e) => {
+    e.target.style.background = 'pink';
+  })
+  emptyArray[i].appendChild(rowName[i]);
+}
